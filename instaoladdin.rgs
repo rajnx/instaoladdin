@@ -1,0 +1,51 @@
+HKCR
+{
+	InstaOLAddin.InstaOLAddin.1 = s 'InstaOLAddin Class'
+	{
+		CLSID = s '{7A20F2D3-05C5-4231-93B3-464AC904290C}'
+	}
+	InstaOLAddin.InstaOLAddin = s 'InstaOLAddin Class'
+	{
+		CLSID = s '{7A20F2D3-05C5-4231-93B3-464AC904290C}'
+		CurVer = s 'InstaOLAddin.InstaOLAddin.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {7A20F2D3-05C5-4231-93B3-464AC904290C} = s 'InstaOLAddin Class'
+		{
+			ProgID = s 'InstaOLAddin.InstaOLAddin.1'
+			VersionIndependentProgID = s 'InstaOLAddin.InstaOLAddin'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{380F80E5-4527-4DED-B5B1-461C51B47EBB}'
+			'Version' = s '1.0'
+		}
+	}
+}
+HKCU
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Office
+			{
+				NoRemove Outlook
+				{
+					NoRemove Addins
+					{
+						InstaOLAddin.InstaOLAddin
+						{
+							val Description = s 'Save e-mail to Instapaper'
+							val FriendlyName = s 'Save e-mail to Instapaper'
+							val LoadBehavior = d 3
+						}
+					}
+				}
+			}
+		}
+	}
+}

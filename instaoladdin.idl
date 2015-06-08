@@ -1,0 +1,42 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+    object,
+    uuid(2F020D12-017D-41ED-AD95-A03AA80F47CD),
+    dual,
+    nonextensible,
+    helpstring("IRibbonCallback Interface"),
+    pointer_default(unique)
+]
+interface IRibbonCallback : IDispatch{
+    [id(42), helpstring("Button Callback")]
+    HRESULT ButtonClicked([in]IDispatch* ribbonControl);
+};
+[
+    object,
+    uuid(CABCDE6C-9680-4DFC-BF60-4B6A38E63CDB),
+    dual,
+    nonextensible,
+    helpstring("IInstaOLAddinConnect Interface"),
+    pointer_default(unique)
+]
+interface IInstaOLAddinConnect : IDispatch{
+};
+[
+    uuid(380F80E5-4527-4DED-B5B1-461C51B47EBB),
+    version(1.0),
+    helpstring("InstaOLAddinLib 1.0 Type Library")
+]
+library InstaOLAddinLib
+{
+    importlib("stdole2.tlb");
+    [
+        uuid(7A20F2D3-05C5-4231-93B3-464AC904290C),
+        helpstring("InstaOLAddin Class")
+    ]
+    coclass InstaOLAddin
+    {
+        [default] interface IRibbonCallback;
+    };
+};
