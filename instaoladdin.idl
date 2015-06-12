@@ -13,6 +13,9 @@ interface IRibbonCallback : IDispatch{
     [id(42), helpstring("Button Callback")]
     HRESULT ButtonClicked([in]IDispatch* ribbonControl);
 };
+
+
+
 [
     object,
     uuid(CABCDE6C-9680-4DFC-BF60-4B6A38E63CDB),
@@ -23,6 +26,9 @@ interface IRibbonCallback : IDispatch{
 ]
 interface IInstaOLAddinConnect : IDispatch{
 };
+
+
+
 [
     uuid(380F80E5-4527-4DED-B5B1-461C51B47EBB),
     version(1.0),

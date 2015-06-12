@@ -1,0 +1,15 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui">
+  <ribbon>
+    <tabs>
+      <tab id="Instapaper" label="INSTAPAPER">
+        <group id="InstapaperGroup" label="Instapaper Group">
+          <button id="SaveToInstaButton"
+              imageMso="WebPagePreview"
+              size="large"
+              label="Save To Instapaper"
+              onAction="ButtonClicked"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
